@@ -1,0 +1,13 @@
+[package]
+name = "ndk-logger"
+version = "0.0.1"
+authors = ["Jarod Liu <liuyuanzhi@gmail.com>"]
+description = "Android NDK logger"
+license = "MIT"
+links = "log"
+
+[lib]
+name = "ndk_logger"
+
+[dependencies]
+log = "0.4"
