@@ -2,8 +2,16 @@
 name = "ndk-logger"
 version = "0.0.1"
 authors = ["Jarod Liu <liuyuanzhi@gmail.com>"]
-description = "Android NDK logger"
+description = """
+A library bridging [log](https://crates.io/crates/log) message to [Android NDK log](https://developer.android.com/ndk/reference/log_8h.html).
+"""
+readme = "README.md"
+documentation = "https://docs.rs/ndk-logger/"
+homepage = "https://github.com/jarod/ndk-logger"
+repository = "https://github.com/jarod/ndk-logger"
 license = "MIT"
+keywords = ["logger", "log"]
+categories = ["development-tools::debugging"]
 links = "log"
 
 [lib]
