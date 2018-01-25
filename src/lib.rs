@@ -2,34 +2,11 @@ extern crate log;
 
 mod ffi;
 
-use std::fmt;
 use std::os::raw::{c_char, c_int};
-use std::result;
-use log::{Level, Log, Metadata, Record};
+use log::{Level, Log, Metadata, Record, SetLoggerError};
 use ffi::android_LogPriority;
 
-#[derive(Debug)]
-pub struct Error;
-impl fmt::Display for Error {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "ndk_logger.Error")
-    }
-}
-impl std::error::Error for Error {
-    fn description(&self) -> &str {
-        "ndk_logger.Error"
-    }
-}
-
-type Result<T> = result::Result<T, Error>;
-
 pub struct Logger;
-
-impl Logger {
-    pub fn new() -> Result<Logger> {
-        Ok(Logger {})
-    }
-}
 
 impl Log for Logger {
     fn enabled(&self, _metadata: &Metadata) -> bool {
@@ -55,4 +32,8 @@ impl Log for Logger {
     }
 
     fn flush(&self) {}
+}
+
+pub fn init() -> Result<(), SetLoggerError> {
+    log::set_boxed_logger(Box::new(Logger {}))
 }

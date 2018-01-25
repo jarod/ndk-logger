@@ -1,6 +1,6 @@
 [package]
 name = "ndk-logger"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Jarod Liu <liuyuanzhi@gmail.com>"]
 description = """
 A library bridging [log](https://crates.io/crates/log) message to [Android NDK log](https://developer.android.com/ndk/reference/log_8h.html).
@@ -18,4 +18,4 @@ links = "log"
 name = "ndk_logger"
 
 [dependencies]
-log = "0.4"
+log = {version="0.4", features=["std"]}
